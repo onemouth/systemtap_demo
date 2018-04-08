@@ -1,3 +1,8 @@
-probe process("/bin/ls").function("*"){
-    log(pp())
+probe process("/bin/ls").function("*").call{
+    log(thread_indent(1) . "=> " . probefunc() . $$parms)
+}
+
+
+probe process("/bin/ls").function("*").call{
+    log(thread_indent(-1) . "<= " . probefunc(). $$return)
 }
