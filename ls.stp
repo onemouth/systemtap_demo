@@ -1,0 +1,3 @@
+probe process("/bin/ls").function("*"){
+    log(pp())
+}
