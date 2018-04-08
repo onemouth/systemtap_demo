@@ -1,0 +1,3 @@
+[submodule "systemtap-python-tools"]
+	path = systemtap-python-tools
+	url = https://github.com/emfree/systemtap-python-tools.git
