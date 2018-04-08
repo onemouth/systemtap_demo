@@ -1,3 +1,6 @@
 [submodule "systemtap-python-tools"]
 	path = systemtap-python-tools
 	url = https://github.com/emfree/systemtap-python-tools.git
+[submodule "FlameGraph"]
+	path = FlameGraph
+	url = https://github.com/brendangregg/FlameGraph.git
