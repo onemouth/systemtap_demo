@@ -2,3 +2,7 @@ probe kernel.function("kbd_event") {
   # Changes 'm' to 'b' .
   if ($event_code == 50) $event_code = 48
 }
+
+probe kernel.statement("*@/build/linux-8h04gD/linux-4.13.0/drivers/tty/vt/*.c:*"){
+	log(pp())
+}
