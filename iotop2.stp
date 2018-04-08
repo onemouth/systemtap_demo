@@ -1,0 +1,5 @@
+global reads
+
+probe vfs.read {
+    reads[execname()] <<< $count
+}
