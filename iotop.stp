@@ -9,7 +9,7 @@ probe vfs.write {
 }
 
 probe timer.s(5) {
-    printf("%16s\t%10s\t%10s\n", "process", "read", "write")
+    printf("%16s\t%10s\t%10s\n", "Process", "KB Read", "KB Written")
     foreach (name in reads)
         total_io[name] += reads[name]
     foreach (name in writes)
