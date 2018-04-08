@@ -1,0 +1,4 @@
+probe kernel.function("kbd_event") {
+  # Changes 'm' to 'b' .
+  if ($event_code == 50) $event_code = 48
+}
