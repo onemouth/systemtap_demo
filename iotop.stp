@@ -1,14 +1,17 @@
 global reads, writes, total_io
 
 probe vfs.read {
-    read[execname()] += $count
+    reads[execname()] += $count
 }
 
 probe vfs.write {
-    read[execname()] += $count
+    writes[execname()] += $count
 }
 
-probe time.s(5) {
+probe timer.s(5) {
+    printf("%16s\t%10s\t%10s\n", "process", "read", "write")
+    foreach (name in reads)
+        total_io[name] += reads[name]
     foreach (name in writes)
         total_io[name] += writes[name]
     foreach (name in total_io- limit 10)
